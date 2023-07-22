@@ -27,8 +27,8 @@
 <style scoped>
     #container {
         width: 100%;
-        max-height: 100vh;
-        position: absolute;
+        height: 100%;
+        position: fixed;
         top: 0;
         left: 0;
 

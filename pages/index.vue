@@ -35,7 +35,7 @@ const info_shown = ref(false);
 
 <style scoped>
 #bg {
-  min-height: 100vh;
+  min-height: 100%;
 
   padding: 30px 0;
   background-color: #000;
