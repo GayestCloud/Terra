@@ -40,6 +40,8 @@
         align-content: flex-start;
         
         background-color: #000;
+
+        overflow: hidden;
     }
 
     #top, #bottom {
@@ -54,7 +56,9 @@
     }
 
     #top img {
-        height: 100px;
+        /* height: 100px; */
+        width: 100%;
+        max-width: 267px;
     }
 
     #middle {
@@ -65,6 +69,8 @@
         width: 100%;
         max-width: 850px;
         padding: 30px;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     @media only screen and (max-width: 850px) {

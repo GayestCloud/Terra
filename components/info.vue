@@ -1,7 +1,8 @@
 <template>
     <img :src="'pic.jpg'">
     <h1>Contact</h1>
-    <p>terio.hachula@protonmail.com</p>
+    <p><b>e-mail:</b> terio.hachula@protonmail.com</p>
+    <p><b>discord:</b> @terio99</p>
 </template>
 
 <style scoped>
@@ -12,6 +13,10 @@
     }
 
     h1 {
-        margin-bottom: -10px;
+        margin-bottom: 0;
+    }
+
+    p {
+        line-height: 0.5;
     }
 </style>
