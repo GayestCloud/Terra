@@ -1,5 +1,5 @@
 <template>
-    <img src="pic.jpg">
+    <img :src="'pic.jpg'">
     <h1>Contact</h1>
     <p>terio.hachula@protonmail.com</p>
 </template>
