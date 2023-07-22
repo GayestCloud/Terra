@@ -15,8 +15,4 @@
     h1 {
         margin-bottom: 0;
     }
-
-    p {
-        line-height: 0.5;
-    }
 </style>
