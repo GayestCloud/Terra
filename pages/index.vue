@@ -1,4 +1,15 @@
 <script setup>
+const title = ref("TERRA")
+const description = ref("TERRA music")
+
+useHead({ 
+  title, 
+  meta: [{ 
+    name: 'desciption',
+    content: description,
+  }]
+})
+
 const news_shown = ref(false);
 const info_shown = ref(false);
   // const glupota = ref(false)

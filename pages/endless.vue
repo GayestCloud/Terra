@@ -1,3 +1,13 @@
+<script setup>
+
+const title = ref("endless")
+
+useHead({ 
+  title
+})
+
+</script>
+
 <template>
     <div id="wrapper">
 
