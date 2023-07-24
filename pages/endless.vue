@@ -66,7 +66,7 @@ onMounted(() => {
     <div class="text"></div>
 
     <div id="image-wrap">
-        <img :src="'park.jpg'">
+        <img :src="'/endless/park.jpg'">
     </div>
 
     <div id="bg">
