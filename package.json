@@ -12,5 +12,9 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.16.19",
     "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2",
+    "nuxi": "^3.6.5"
   }
 }
