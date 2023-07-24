@@ -20,8 +20,10 @@ onMounted(() => {
 
         let letterWidth = document.getElementsByClassName("text")[0].offsetWidth
         let letterHeight = document.getElementsByClassName("text")[0].offsetHeight
-        let screenWidth = document.getElementById("bg")?.offsetWidth
-        let screenHeight = document.getElementById("bg")?.offsetHeight
+        // let screenWidth = document.getElementById("bg")?.offsetWidth
+        let screenWidth = window.innerWidth;
+        // let screenHeight = document.getElementById("bg")?.offsetHeight
+        let screenHeight = window.innerHeight;
         let divsToFillScreenWidth = Math.floor(screenWidth / letterWidth) + 1
         let divsFillScreenHeight = Math.floor(screenHeight / letterHeight) + 1
 
