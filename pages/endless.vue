@@ -11,12 +11,11 @@ useHead({
 
 onMounted(() => {
     function duplicateTextToFillPage() {        
-        let textDiv = document.getElementsByClassName('text')[0];
-        textDiv.innerHTML = "";
-        textDiv.classList.add("hidden")
+        let textDiv = document.getElementsByClassName('text')[0]
+        textDiv.innerHTML = ""
 
         let text = ["there's", "an", "endless", "party", "going", "on", "at", "lokum", "stonewall"].join(" ").concat(" ")
-        textDiv.innerHTML = text;
+        textDiv.innerHTML = text
 
         let letterWidth = document.getElementsByClassName("text")[0].offsetWidth
         let letterHeight = document.getElementsByClassName("text")[0].offsetHeight
@@ -63,7 +62,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="testText"></div>
+    <div class="test-text"></div>
     <div class="text"></div>
 
     <div id="image-wrap">
@@ -79,6 +78,13 @@ onMounted(() => {
 <style scoped>
 * {
     font-family: 'JetBrains Mono', monospace;
+}
+
+.test-text {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
 }
 .line {
     display: flex;
