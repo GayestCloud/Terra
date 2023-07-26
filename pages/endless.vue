@@ -78,6 +78,7 @@ onMounted(() => {
 <style scoped>
 * {
     font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
 }
 
 .test-text {
@@ -111,10 +112,9 @@ onMounted(() => {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 1.3rem;
     z-index: 1;
-    height: calc(100% + 1em * 0.6);
-    margin-top: calc(-1em * 0.6);
+    height: calc(100% + 14px);
+    margin-top: -14px;
     mix-blend-mode: difference;
 }
 
