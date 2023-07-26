@@ -77,6 +77,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+* {
+    font-family: 'JetBrains Mono', monospace;
+}
 .line {
     display: flex;
     flex-direction: row;
@@ -102,7 +105,6 @@ onMounted(() => {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    font-family: 'Source Code Pro', monospace;
     font-size: 1.3rem;
     z-index: 1;
     height: calc(100% + 1em * 0.6);

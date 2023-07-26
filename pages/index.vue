@@ -51,7 +51,7 @@ const info_shown = ref(false);
   padding: 30px 0;
   background-color: #000;
   color: #fff;
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'JetBrains Mono', monospace;
 
   display: flex;
   justify-content: center;
