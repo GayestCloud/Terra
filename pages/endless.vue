@@ -10,46 +10,55 @@ useHead({
 })
 
 onMounted(() => {
-    function duplicateTextToFillPage() {        
-        let textDiv = document.getElementsByClassName('text')[0]
-        textDiv.innerHTML = ""
+    function duplicateTextToFillPage() {      
 
-        let text = ["there's", "an", "endless", "party", "going", "on", "at", "lokum", "stonewall"].join(" ").concat(" ")
-        textDiv.innerHTML = text;
+        // Get the div #text with entry text and place text inside it into a variable
+        let textDiv = document.getElementById('text')
+        let text = textDiv.innerHTML
 
-        let letterWidth = document.getElementsByClassName("text")[0].offsetWidth
-        let letterHeight = document.getElementsByClassName("text")[0].offsetHeight
-        let screenWidth = document.getElementById("bg")?.offsetWidth
-        let screenHeight = document.getElementById("bg")?.offsetHeight
-        let divsToFillScreenWidth = Math.floor(screenWidth / letterWidth) + 1
-        let divsFillScreenHeight = Math.floor(screenHeight / letterHeight) + 1
+        // Get #text width and height
+        let textWidth = textDiv.offsetWidth
+        let textHeight = textDiv.offsetHeight
 
-        for (let step = 0; step < divsToFillScreenWidth; step++) {
-            textDiv.innerHTML += text
+        // Get window width and height
+        let screenWidth = window.innerWidth
+        let screenHeight = window.innerHeight
+
+        // Calculate how many text repeations are required to fill screen width and how many lines to fill screen height
+        let divsToFillScreenWidth = Math.floor(screenWidth / textWidth) - 1
+        let divsToFillScreenHeight = Math.floor(screenHeight / textHeight) - 1
+
+        // Get text-wrap element
+        let textWrap = document.getElementById('text-wrap')
+                
+        // Get line div - clear everything in text-wrap except one line
+        let lineDiv = document.getElementsByClassName('line')[0]
+        textWrap.replaceChildren(lineDiv);
+
+        // Insert text to line div
+        lineDiv.innerHTML = text
+
+        // Append text to line div to fill the width
+        for (let step = 0; step <= divsToFillScreenWidth; step++) {
+            lineDiv.append(text);
         }
 
-        var fullText = document.getElementsByClassName('text')[0].innerText
-        textDiv.innerHTML = ""
-        textDiv.classList.remove("hidden")
+        // Get new text
+        let fullText = lineDiv.innerHTML;
+        lineDiv.innerHTML = ""
 
-        let bgDiv = document.getElementById('bg')
-        let lineDiv = bgDiv?.getElementsByClassName('line')[0]
-        lineDiv?.replaceChildren();
-        bgDiv?.replaceChildren(lineDiv);
-
-        for (let step = 0; step < divsFillScreenHeight; step++) {
-            let clonedLine = lineDiv.cloneNode(true)
-            clonedLine.style.marginLeft = '-' + Math.floor(Math.random() * letterWidth) + 'px';
-            bgDiv.appendChild(clonedLine)
+        // Append lines to fill screen height
+        for (let step = 0; step <= divsToFillScreenHeight; step++) {
+            let newLine = lineDiv.cloneNode(true)
+            textWrap.appendChild(newLine);
         }
 
-        animate(fullText, divsFillScreenHeight)
+        animate(fullText)
+
     }
 
-    function animate(text, lines) {
-        for (let step = 0; step <= lines; step++) {
-            gsap.to(".line", {duration: 0.4, text: text, ease: "none", stagger: 0.3});
-        }
+    function animate(text) {
+        gsap.to(".line", {duration: 0.4, text: text, ease: "none", stagger: 0.3});
     }
 
     duplicateTextToFillPage()
@@ -62,14 +71,13 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="test-text"></div>
-    <div class="text"></div>
+    <div id="text">there's an endless party at lokum stonewall </div>
 
     <div id="image-wrap">
         <img :src="'/endless/park.jpg'">
     </div>
 
-    <div id="bg">
+    <div id="text-wrap">
         <div class="line"></div>
     </div>
 
@@ -78,67 +86,54 @@ onMounted(() => {
 <style scoped>
 * {
     font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
 }
 
-.test-text {
+#text {
     position: absolute;
+    top: 0;
+    left: 0;
+
     width: max-content;
     overflow: hidden;
     white-space: nowrap;
-    opacity: 0;
-    top: 0;
-    left: 0;
+
+    opacity: 1;
 }
 .line {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
     overflow: hidden;
 }
-.text {
+
+#text-wrap {
     position: absolute;
-    width: max-content;
-    overflow: hidden;
-    white-space: nowrap;
-    opacity: 0;
     top: 0;
     left: 0;
-}
 
-:deep(.hidden) {
-    position: absolute;
-    opacity: 0;
-}
-
-#bg {
-    color: #fff;
+    
     width: 100%;
+    height: 100%;
+
     overflow: hidden;
     white-space: nowrap;
-    font-size: 1rem;
-    z-index: 1;
-    height: calc(100% + 1em * 0.6);
-    margin-top: calc(-1em * 0.6);
+
+    opacity: 1;
+
     mix-blend-mode: difference;
+    color: #fff;
 }
 
 #image-wrap {
-    position: fixed;
-    top: 0;
-    left: 0;
-    color: #fff;
-    background-color: #000;
     width: 100%;
     height: 100%;
+
+    z-index: -1;
 
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    z-index: -1;
+    
+    background-color: #000;
 }
 
 img {
