@@ -15,7 +15,7 @@ onMounted(() => {
         textDiv.innerHTML = ""
 
         let text = ["there's", "an", "endless", "party", "going", "on", "at", "lokum", "stonewall"].join(" ").concat(" ")
-        textDiv.innerHTML = text
+        textDiv.innerHTML = text;
 
         let letterWidth = document.getElementsByClassName("text")[0].offsetWidth
         let letterHeight = document.getElementsByClassName("text")[0].offsetHeight
@@ -78,7 +78,6 @@ onMounted(() => {
 <style scoped>
 * {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
 }
 
 .test-text {
@@ -112,9 +111,10 @@ onMounted(() => {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+    font-size: 1rem;
     z-index: 1;
-    height: calc(100% + 14px);
-    margin-top: -14px;
+    height: calc(100% + 1em * 0.6);
+    margin-top: calc(-1em * 0.6);
     mix-blend-mode: difference;
 }
 
