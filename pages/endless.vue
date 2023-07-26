@@ -82,6 +82,9 @@ onMounted(() => {
 
 .test-text {
     position: absolute;
+    width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
     opacity: 0;
     top: 0;
     left: 0;
@@ -96,9 +99,13 @@ onMounted(() => {
     overflow: hidden;
 }
 .text {
+    position: absolute;
     width: max-content;
     overflow: hidden;
     white-space: nowrap;
+    opacity: 0;
+    top: 0;
+    left: 0;
 }
 
 :deep(.hidden) {
