@@ -25,7 +25,7 @@ onMounted(() => {
         let screenHeight = window.innerHeight
 
         // Calculate how many text repeations are required to fill screen width and how many lines to fill screen height
-        let divsToFillScreenWidth = Math.floor(screenWidth / textWidth) - 1
+        let divsToFillScreenWidth = Math.floor(screenWidth / textWidth)
         let divsToFillScreenHeight = Math.floor(screenHeight / textHeight) - 1
 
         // Get text-wrap element
@@ -50,6 +50,7 @@ onMounted(() => {
         // Append lines to fill screen height
         for (let step = 0; step <= divsToFillScreenHeight; step++) {
             let newLine = lineDiv.cloneNode(true)
+            newLine.style.marginLeft = '-' + Math.floor(Math.random() * textWidth) + 'px';
             textWrap.appendChild(newLine);
         }
 
@@ -86,7 +87,7 @@ onMounted(() => {
 <style scoped>
 * {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #text {
@@ -111,7 +112,9 @@ onMounted(() => {
 
     
     width: 100%;
-    height: 100%;
+    height: calc(100% + 10px);
+
+    margin-top: -10px;
 
     overflow: hidden;
     white-space: nowrap;
