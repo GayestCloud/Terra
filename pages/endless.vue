@@ -10,23 +10,23 @@ useHead({
 })
 
 onMounted(() => {
+    // FIXME: It's broken on iOS when horizontal LOL
     function duplicateTextToFillPage() {      
-
         // Get the div #text with entry text and place text inside it into a variable
         let textDiv = document.getElementById('text')
         let text = textDiv.innerHTML
 
         // Get #text width and height
-        let textWidth = textDiv.offsetWidth
-        let textHeight = textDiv.offsetHeight
+        let textWidth = textDiv.offsetWidth || 1
+        let textHeight = textDiv.offsetHeight || 1
 
         // Get window width and height
         let screenWidth = window.innerWidth
         let screenHeight = window.innerHeight
 
         // Calculate how many text repeations are required to fill screen width and how many lines to fill screen height
-        let divsToFillScreenWidth = Math.floor(screenWidth / textWidth)
-        let divsToFillScreenHeight = Math.floor(screenHeight / textHeight) - 1
+        let divsToFillScreenWidth = Math.floor(screenWidth / textWidth) || 1
+        let divsToFillScreenHeight = Math.ceil(screenHeight / textHeight) || 1
 
         // Get text-wrap element
         let textWrap = document.getElementById('text-wrap')
@@ -57,18 +57,29 @@ onMounted(() => {
         }
 
         animate(fullText)
-
     }
 
     function animate(text) {
         gsap.to(".line", {duration: 0.4, text: text, ease: "none", stagger: 0.3});
     }
 
-    duplicateTextToFillPage()
+    let wsizew = window.innerWidth;
+    let wsizeh = window.innerHeight;
+    let tID = undefined;
+    window.addEventListener('resize', () => {
+        if (tID !== undefined) {
+            clearTimeout(tID);
+        }
 
+        tID = setTimeout(() => {
+            if (wsizew != window.innerWidth || wsizeh != window.innerHeight)
+                duplicateTextToFillPage()
+            wsizew = window.innerWidth;
+            wsizeh = window.innerHeight;
+        }, 200);
+    });
 
-    window.addEventListener('load', duplicateTextToFillPage);
-    window.addEventListener('resize', duplicateTextToFillPage);
+    duplicateTextToFillPage();
 })
 
 </script>
@@ -93,18 +104,15 @@ onMounted(() => {
 }
 
 #text {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 
     width: max-content;
-    overflow: hidden;
+    visibility: hidden;
     white-space: nowrap;
 
     opacity: 1;
-}
-.line {
-    overflow: hidden;
 }
 
 #text-wrap {
@@ -112,10 +120,8 @@ onMounted(() => {
     top: 0;
     left: 0;
 
-    
     width: 100%;
     height: calc(100% + 10px);
-
     margin-top: -10px;
 
     overflow: hidden;
