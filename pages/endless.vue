@@ -50,7 +50,7 @@ onMounted(() => {
         // Append lines to fill screen height
         for (let step = 0; step <= divsToFillScreenHeight; step++) {
             let newLine = lineDiv.cloneNode(true)
-            newLine.style.marginLeft = '-' + Math.floor(Math.random() * textWidth) + 'px';
+            // newLine.style.marginLeft = '-' + Math.floor(Math.random() * textWidth) + 'px';
             textWrap.appendChild(newLine);
         }
 
