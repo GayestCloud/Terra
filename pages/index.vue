@@ -4,10 +4,13 @@ const description = ref("TERRA music")
 
 useHead({ 
   title, 
-  meta: [{ 
-    name: 'desciption',
-    content: description,
-  }]
+  meta: [
+    { 
+      name: 'desciption',
+      content: description,
+    },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }
+  ]
 })
 
 const news_shown = ref(false);
@@ -47,8 +50,11 @@ const info_shown = ref(false);
 <style scoped>
 #bg {
   min-height: 100%;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
 
-  padding: 30px 0;
   background-color: #000;
   color: #fff;
   font-family: 'JetBrains Mono', monospace;
@@ -60,6 +66,7 @@ const info_shown = ref(false);
 
 #wrap {
   max-width: 850px;
+  padding: 30px 0;
   display: flex;
   flex-direction: column;
   gap: 30px;

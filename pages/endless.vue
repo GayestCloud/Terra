@@ -6,7 +6,10 @@ gsap.registerPlugin(TextPlugin);
 const title = ref("endless")
 
 useHead({
-    title
+    title,
+    meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }
+    ]
 })
 
 onMounted(() => {
