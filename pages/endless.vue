@@ -51,6 +51,8 @@ onMounted(() => {
         for (let step = 0; step <= divsToFillScreenHeight; step++) {
             let newLine = lineDiv.cloneNode(true)
             // newLine.style.marginLeft = '-' + Math.floor(Math.random() * textWidth) + 'px';
+            let displace = 'translateX(' + '-' + Math.floor(Math.random() * textWidth) + 'px)'
+            newLine.style.transform = displace
             textWrap.appendChild(newLine);
         }
 
