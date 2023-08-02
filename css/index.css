@@ -1,0 +1,137 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+img {
+    width: 100%;
+    pointer-events: none;
+}
+
+main {
+    max-width: 850px;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.popup {
+    width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: flex-start;
+        
+        background-color: #000;
+
+        overflow: hidden;
+}
+
+.popup:not(.active) {
+    display: none;
+}
+
+.popup > .top {
+    width: 100%;
+    max-width: 267px;
+}
+
+.popup > .middle {
+    flex: 1;
+    border-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    max-width: 850px;
+    padding: 30px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.popup > .top,
+.popup > .bottom {
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#main_wrapper {
+    min-height: 100%;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#menu {
+    width: 100%;
+    height: 60px;
+    border-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 30px;
+}
+
+#menu > a {
+    vertical-align: baseline;
+}
+
+#info > .middle > img {
+    width: 100%;
+    max-width: 400px;
+    pointer-events: none;
+}
+
+#news .date {
+    font-size: 12px;
+    margin-bottom: -10px;
+    font-size: 12px;
+}
+
+#news p {
+    margin-bottom: 30px;
+}
+
+#links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+    .popup > .middle {
+        border-width: 1px 0px;
+    }
+
+    #menu {
+        border-width: 1px 0px;
+    }
+}

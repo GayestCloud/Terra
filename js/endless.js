@@ -1,19 +1,8 @@
-<script setup>
-import { gsap } from 'gsap'
-import { TextPlugin } from 'gsap/TextPlugin'
+// import { gsap } from 'gsap'
+// import { TextPlugin } from 'gsap/TextPlugin'
 gsap.registerPlugin(TextPlugin);
 
-const title = ref("endless")
-
-useHead({
-    title,
-    meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }
-    ]
-})
-
-onMounted(() => {
-    // FIXME: It's broken on iOS when horizontal LOL
+document.addEventListener('DOMContentLoaded', () => {
     function duplicateTextToFillPage() {      
         // Get the div #text with entry text and place text inside it into a variable
         let textDiv = document.getElementById('text')
@@ -84,76 +73,3 @@ onMounted(() => {
 
     duplicateTextToFillPage();
 })
-
-</script>
-
-<template>
-    <div id="text">there's an endless party at lokum stonewall </div>
-
-    <div id="image-wrap">
-        <img :src="'/endless/park.jpg'">
-    </div>
-
-    <div id="text-wrap">
-        <div class="line"></div>
-    </div>
-
-</template>
-
-<style scoped>
-* {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-}
-
-#text {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: max-content;
-    visibility: hidden;
-    white-space: nowrap;
-
-    opacity: 1;
-}
-
-#text-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: calc(100% + 10px);
-    margin-top: -10px;
-
-    overflow: hidden;
-    white-space: nowrap;
-
-    opacity: 1;
-
-    mix-blend-mode: difference;
-    color: #fff;
-}
-
-#image-wrap {
-    width: 100%;
-    height: 100%;
-
-    z-index: -1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    
-    background-color: #000;
-}
-
-img {
-    width: 680px;
-    max-width: 100%;
-    max-height: 100%;
-    padding: 40px;
-}
-</style>
