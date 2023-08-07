@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+::-moz-selection, ::selection  { 
+    background: black; 
+    color: white;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding-top: 40px;
+}
+
+main {
+    margin: auto;
+    max-width: 800px;
+}
+
+iframe {
+    aspect-ratio: calc(16/9);
+    width: 100%;
+    height: auto;
+}
+
+.credits {
+    line-height: 2;
+}
