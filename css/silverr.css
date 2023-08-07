@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap');
+
+::-moz-selection, ::selection  { 
+    background: #e0e0e0; 
+    color: white;
+}
+
+body {
+    height: auto;
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    text-align: center;
+    padding: 25px;
+    
+    margin: auto;
+    max-width: 650px;
+}
+
+a {
+    color: inherit !important;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 25px;
+
+}
+
+h1 {
+    --fs: clamp(50px, 20vw, 100px);
+    font-size: var(--fs);
+    /* 100px; */
+    color: #e0e0e0;
+    font-weight: 700;
+    margin: 0;
+    line-height: 0.87;
+    margin-bottom: -25px;
+    margin-top: 25px
+}
+
+iframe {
+    max-width: 100%;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.video {
+    aspect-ratio: calc(560/315);
+    height: auto;
+}
+
+.spotify {
+    background-color: #7f7f7f;
+}
