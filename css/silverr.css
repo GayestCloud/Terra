@@ -44,11 +44,6 @@ h1 {
     margin-top: 25px
 }
 
-iframe {
-    max-width: 100%;
-    width: 100%;
-}
-
 img {
     width: 100%;
 
@@ -62,11 +57,8 @@ img {
     text-align: right;
 }
 
-.video {
-    aspect-ratio: calc(560/315);
-    height: auto;
-}
-
 .spotify {
+    aspect-ratio: unset;
+    height: revert-layer;
     background-color: #7f7f7f;
 }

@@ -20,12 +20,6 @@ main {
     max-width: 800px;
 }
 
-iframe {
-    aspect-ratio: calc(16/9);
-    width: 100%;
-    height: auto;
-}
-
 .credits {
     line-height: 2;
 }
