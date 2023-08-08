@@ -18,8 +18,15 @@ body {
 main {
     margin: auto;
     max-width: 800px;
+    text-align: center;
+}
+
+img {
+    width: 300px;
+    max-width: calc(100% - 40px);
+    margin: 20px 10px;
 }
 
 .credits {
-    line-height: 2;
+    margin-top: 10px;
 }
