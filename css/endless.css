@@ -1,7 +1,4 @@
 body {
-    width: 100vw !important;
-    height: 100vh !important;
-
     background-image: url("/res/endless/background-white.jpg");
     background-size: cover;
     background-position: center;
