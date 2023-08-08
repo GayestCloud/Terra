@@ -3,7 +3,7 @@ body {
     background-color: black;
     color: white;
 
-    margin: 28px;
+    padding: 28px;
 
     display: flex;
     flex-direction: column;
