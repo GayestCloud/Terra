@@ -18,3 +18,7 @@ button {
     text-align: center;
     display: none;
 }
+
+img {
+    max-width: 260px;
+}
