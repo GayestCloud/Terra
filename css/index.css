@@ -105,9 +105,9 @@ main {
 #divider {
     width: 460px;
     height: 1px;
-    background-color: #fff;
-    /* background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(0,0,0,0) 100%); */
+    /* background-color: #fff; */
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(0,0,0,0) 100%);
 }
 
 #menu>a {
@@ -154,8 +154,8 @@ main {
     }
 
     #divider {
-        width: 100%;
-        /* width: calc(100% - 40px);
-        margin: 0 20px; */
+        /* width: 100%; */
+        width: calc(100% - 40px);
+        margin: 0 20px;
     }
 }
