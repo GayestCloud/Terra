@@ -6,13 +6,16 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     align-content: center;
+
     background-color: #00b5e1;
     color: #ffffd3;
-    font-size: 14px;
+
+    font-size: 16px;
     font-family: hellovetica;
+
     overflow: scroll;
 }
 
@@ -22,7 +25,12 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
+
+    padding-top: 30px;
+
     gap: 30px;
+
+    max-width: 100%;
 }
 
 header, main, footer {
@@ -34,6 +42,7 @@ header, main, footer {
 
 main {
     aspect-ratio: 16 / 9;
+    margin-bottom: 1px;
 }
 
 header {
