@@ -141,6 +141,10 @@ main {
 }
 
 @media only screen and (max-width: 850px) {
+    body {
+        font-size: 14px;
+    }
+    
     .popup>.middle {
         border-width: 1px 0px;
     }
