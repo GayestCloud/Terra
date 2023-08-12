@@ -154,8 +154,9 @@ main {
     }
 
     #divider {
-        /* width: 100%; */
-        width: calc(100% - 40px);
-        margin: 0 20px;
+        width: 100%;
+        background-color: #fff;
+        /* width: calc(100% - 40px); */
+        /* margin: 0 20px; */
     }
 }
