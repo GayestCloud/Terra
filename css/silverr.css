@@ -10,7 +10,7 @@ body {
     font-family: 'Noto Sans Mono', monospace;
     font-size: 14px;
     background-color: white;
-    color: #333333;
+    color: #3F4679;
     text-align: center;
     padding: 25px;
     
@@ -36,7 +36,7 @@ h1 {
     --fs: clamp(50px, 20vw, 100px);
     font-size: var(--fs);
     /* 100px; */
-    color: #e0e0e0;
+    color: #E5E4F6;
     font-weight: 700;
     margin: 0;
     line-height: 0.87;
@@ -60,5 +60,5 @@ img {
 .spotify {
     aspect-ratio: unset;
     height: revert-layer;
-    background-color: #7f7f7f;
+    background-color: #535353;
 }

@@ -1,16 +1,13 @@
-let outer = document.getElementById('outer'),
-        wrapper = document.getElementById('wrap'),
-        maxWidth  = outer.clientWidth,
-        maxHeight = outer.clientHeight;
-window.addEventListener("resize", resize);
-resize();
-function resize(){let scale,
-    width = window.innerWidth,
-  height = window.innerHeight,
-  isMax = width >= maxWidth && height >= maxHeight;
-
-    scale = Math.min(width/maxWidth, height/maxHeight);
-    outer.style.transform = isMax?'':'scale(' + scale + ')';
-    wrapper.style.width = isMax?'':maxWidth * scale;
-    wrapper.style.height = isMax?'':maxHeight * scale;
+function adjustGrid() {
+    let width = document.getElementById('sample-node').offsetWidth
+    console.log(width)
+    document.getElementById('grid').style.setProperty('grid-auto-rows', `${width}px`)
 }
+
+window.addEventListener('load', () => {
+    adjustGrid()
+})
+
+window.addEventListener('resize', () => {
+    adjustGrid()
+})
