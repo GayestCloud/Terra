@@ -138,6 +138,10 @@ h1 {
     margin-bottom: 30px;
 }
 
+#news>p>a {
+    font-weight: bold;
+}
+
 #links {
     display: flex;
     flex-direction: column;
@@ -159,6 +163,7 @@ h1 {
 
     #menu {
         width: 100%;
+        gap: 30px;
     }
 
     #divider {
