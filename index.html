@@ -43,7 +43,7 @@
         <div id="noscript">Hmm... sorry this page won't work without JS :c</div>
     </noscript>
 
-    <video autoplay muted loop id="background">
+    <video muted loop playsinline controls="false" id="background">
         <source src="res/index/clouds_3.mp4" type="video/mp4">
     </video>
 
@@ -148,6 +148,15 @@
     <script>
         var z_index = 10;
         //Make the DIV element draggagle:
+
+        var video = document.getElementById('background')
+
+        video.addEventListener('loadeddata', function() {
+            console.log("meow");
+            video.play();
+            $('#background').fadeIn(600);
+        }, false);
+
         dragElement(document.getElementById("window"));
         dragElement(document.getElementById("window_2"));
 

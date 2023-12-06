@@ -28,6 +28,8 @@ main,
     bottom: 0;
     object-fit: cover;
     object-position: center;
+    /* opacity: 0; */
+    /* filter: opacity(0); CHANGES COLOR OF ELEMENTS TO MASKED BACKGROUND AND BACKGROUND TO FLAT COLOR */
 }
 
 body.popup_active>#menu,
