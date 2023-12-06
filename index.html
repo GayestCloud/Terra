@@ -43,9 +43,11 @@
         <div id="noscript">Hmm... sorry this page won't work without JS :c</div>
     </noscript>
 
-    <video muted loop playsinline controls="false" id="background">
+    <video muted loop playsinline autoplay id="background">
         <source src="res/index/clouds_3.mp4" type="video/mp4">
     </video>
+
+    <div id="curtain"></div>
 
     <div id="popups">
 
@@ -152,10 +154,13 @@
         var video = document.getElementById('background')
 
         video.addEventListener('loadeddata', function() {
-            console.log("meow");
             video.play();
-            $('#background').fadeIn(600);
+            $('#curtain').fadeOut(2000);
         }, false);
+
+        // $(document).ready(function () {
+        //     $('div').fadeIn(600).addClass('hidden');
+        // });
 
         dragElement(document.getElementById("window"));
         dragElement(document.getElementById("window_2"));

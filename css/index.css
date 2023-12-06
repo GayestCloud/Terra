@@ -32,6 +32,16 @@ main,
     /* filter: opacity(0); CHANGES COLOR OF ELEMENTS TO MASKED BACKGROUND AND BACKGROUND TO FLAT COLOR */
 }
 
+#curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /* CHANGES COLOR OF THE FADE IN */
+}
+
 body.popup_active>#menu,
 body.popup_active>main {
     display: none;
