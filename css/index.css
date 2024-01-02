@@ -22,7 +22,7 @@ main,
     user-select: none;
 }
 
-#background {
+#background, #background_img {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -33,7 +33,8 @@ main,
     object-fit: cover;
     object-position: center;
     /* opacity: 0; */
-    /* filter: opacity(0); CHANGES COLOR OF ELEMENTS TO MASKED BACKGROUND AND BACKGROUND TO FLAT COLOR */
+    /* CHANGES COLOR OF ELEMENTS TO MASKED BACKGROUND AND BACKGROUND TO FLAT COLOR */
+    /* filter: opacity(0); */
 }
 
 #curtain {
@@ -140,7 +141,6 @@ a>span {
     max-width: 400px;
     width: 100%;
 
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -152,7 +152,7 @@ a>span {
 
 .middle>p {
     margin: 0;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .popup>.bottom {
@@ -293,7 +293,7 @@ h1:first-child {
     max-height: calc(100% - 40px);
 
     filter: grayscale(1);
-    filter: invert(1);
+    filter: invert(0);
 }
 
 #window_3 img {
@@ -343,6 +343,7 @@ h1:first-child {
 
     .popup>.middle {
         flex: initial;
+        text-align: justify;
     }
 
     #window, #window_2, #window_3 {
