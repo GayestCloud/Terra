@@ -253,29 +253,17 @@ h1:first-child {
 }
 
 #window > .window {
-    width: 200px;
-    height: 240px;
+    width: 270px;
+}
+
+.visible > p {
+    padding: 5px 15px;
 }
 
 #window_2 > .window {
     position: absolute;
     left: 55%;
     top: 45%;
-
-    z-index: 9;
-
-    background-color: #000;
-    border: 1px solid #fff;
-
-    text-align: center;
-
-    width: 300px;
-}
-
-#window_3 > .window {
-    position: absolute;
-    left: 20%;
-    top: 50%;
 
     z-index: 9;
 
@@ -294,6 +282,21 @@ h1:first-child {
 
     filter: grayscale(1);
     filter: invert(0);
+}
+
+#window_3 > .window {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+
+    z-index: 9;
+
+    background-color: #000;
+    border: 1px solid #fff;
+
+    text-align: center;
+
+    width: 300px;
 }
 
 #window_3 img {
